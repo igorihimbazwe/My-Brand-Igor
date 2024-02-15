@@ -137,3 +137,78 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
   });
 }
+
+// added criteria
+
+document.getElementById("form-btn").addEventListener("click", function (event) {
+  event.preventDefault();
+
+  var fname = document.getElementById("fname").value;
+  var lname = document.getElementById("lname").value;
+  var email = document.getElementById("mail").value;
+  var pass1 = document.getElementById("pass1").value;
+  var pass2 = document.getElementById("pass2").value;
+
+  var errors = [];
+
+  // Validate First Name
+  if (!fname.trim()) {
+    errors.push("First name is required.");
+  }
+
+  // Validate Last Name
+  if (!lname.trim()) {
+    errors.push("Last name is required.");
+  }
+
+  // Validate Email
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    errors.push("Invalid email address.");
+  }
+
+  // Check Password Requirements
+  if (pass1.length < 6) {
+    errors.push("Password must be at least 6 characters long.");
+  }
+
+  if (pass1.length > 12) {
+    errors.push("Password must be less than 12 characters long.");
+  }
+
+  if (!/[a-z]/.test(pass1)) {
+    errors.push("Password must contain at least one lowercase letter.");
+  }
+
+  if (!/[A-Z]/.test(pass1)) {
+    errors.push("Password must contain at least one uppercase letter.");
+  }
+
+  if (!/\d/.test(pass1)) {
+    errors.push("Password must contain at least one number.");
+  }
+
+  if (!/[@$!%*?&]/.test(pass1)) {
+    errors.push("Password must contain at least one special character.");
+  }
+
+  // Verify Passwords Match
+  if (pass1 !== pass2) {
+    errors.push("Passwords do not match.");
+  }
+
+  if (errors.length > 0) {
+    // Display errors line by line using pop-up alert boxes
+    errors.forEach(function (error) {
+      alert(error);
+    });
+  } else {
+    // Display success message using a pop-up alert box
+    alert("Sign up successful! Redirecting to dashboard...");
+
+    // Redirect to dashboard after a short delay
+    setTimeout(function () {
+      window.location.href = "dash/index.html";
+    }, 1000);
+  }
+});

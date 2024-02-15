@@ -597,7 +597,7 @@
               <div class="modal-content">
                 <h4 class="h3 modal-title" data-modal-title>Gatete lewis</h4>
 
-                <time datetime="2021-06-14">14 June, 2021</time>
+                <time datetime="2021-06-14">14 June, 2023</time>
 
                 <div data-modal-text>
                   <p>
@@ -1367,16 +1367,20 @@
 
           <section class="contact-form">
             <h3 class="h3 form-title">Contact Form</h3>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2757.373013175809!2d29.350072899999997!3d-1.6987017999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dd0578dcb8dfa7%3A0x62cd95d11590f0ce!2sIHIMBAZWE%20Igor!5e1!3m2!1sen!2srw!4v1707219810285!5m2!1sen!2srw"
-              width="700"
-              height="250"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-
+            <section class="mapbox" data-mapbox>
+              <figure>
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2757.373013175809!2d29.350072899999997!3d-1.6987017999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dd0578dcb8dfa7%3A0x62cd95d11590f0ce!2sIHIMBAZWE%20Igor!5e1!3m2!1sen!2srw!4v1707219810285!5m2!1sen!2srw"
+                width="700"
+                height="250"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+    
+              </figure>
+            </section>
             <form action="#" class="form" data-form>
               <div class="input-wrapper">
                 <input
@@ -1416,7 +1420,7 @@
         <!--
         - #Account
       -->
-
+        <!--Login-->
         <article class="account" data-page="account">
           <header>
             <h2 class="h2 article-title">Account</h2>
@@ -1426,6 +1430,7 @@
             <form action="#" class="form" data-form>
               <div class="input-wrapper">
                 <div>
+
                   <h1>Log In</h1>
                   <input
                     type="email"
@@ -1433,6 +1438,7 @@
                     class="form-input"
                     placeholder="Enter your email"
                     data-form-input
+                    required
                   />
                   <br />
                   <br />
@@ -1442,64 +1448,52 @@
                     class="form-input"
                     placeholder="Enter your password"
                     data-form-input
+                    required
                   />
                   <br />
                   <br />
-                  <button class="form-btn" type="submit" data-form-btn>
+                  <button class="form-btn" type="submit" data-form-btn >
                     <a href="dash/index.html">Login</a>
                   </button>
+                  <p>
                   <strong
-                    >Don't have account <br /><button>SIGN UP</button></strong
+                    >Don't have account <button data-nav-link>SIGNUP</button></strong
                   >
+                </p>
                 </div>
 
-                <div>
-                  <h1>Sign up</h1>
-                  <input
-                    type="Fullname"
-                    name="fullname"
-                    class="form-input"
-                    placeholder="Fullname"
-                    data-form-input
-                  />
-                  <br />
-                  <br />
-                  <input
-                    type="email"
-                    name="email"
-                    class="form-input"
-                    placeholder="Enter your Email"
-                    data-form-input
-                  />
-                  <br />
-                  <br />
-                  <input
-                    type="password"
-                    name="password"
-                    class="form-input"
-                    placeholder="Choose password of your Choice"
-                    data-form-input
-                  />
-                  <br />
-                  <br />
-                  <input
-                    type="password"
-                    name="pasword"
-                    class="form-input"
-                    placeholder="Confirm Password"
-                    data-form-input
-                  />
-                  <br />
-                  <br />
-                  <button class="form-btn" type="submit" data-form-btn>
-                    <a href="dash/index.html">Sign Up</a>
-                  </button>
-                </div>
+                
               </div>
             </form>
           </section>
         </article>
-      </div>
+        <!--SIGNUP-->
+        <article class="signup" data-page="signup">
+          <header>
+            <h2 class="h2 article-title">Account</h2>
+          </header>
+
+          <section class="account-form">
+            <form action="#" class="form" data-form>
+              <div class="input-wrapper">
+                <div>
+                  <h1>Sign up</h1>
+                  <input type="text" name="fullname" id="fname" placeholder="First Name" class="form-input"/>
+                  <br /><br />
+                  <input type="text" name="fullname" id="lname" placeholder="Last Name" class="form-input"/>
+                  <br /><br />
+                  <input type="email" name="email" id="mail" placeholder="Enter your Email" class="form-input"/>
+                  <br /><br />
+                  <input type="password" name="password" id="pass1" placeholder="Choose password of your Choice" class="form-input"/>
+                  <br /><br />
+                  <input type="password" id="pass2" class="form-input" placeholder="Confirm Password" class="form-input"/>
+                  <br /><br />
+                  <button id="form-btn" class="form-btn" type="submit">Sign Up</button>
+                </div>
+              </div>
+    </form>
+  </section>
+</article>
     </main>
 
     <!--

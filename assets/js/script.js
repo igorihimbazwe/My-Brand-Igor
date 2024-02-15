@@ -86,7 +86,7 @@ const filterFunc = function (selectedValue) {
   }
 };
 
-// add event in all filter button items for large screen
+// add event in all filter button items for large screenn
 let lastClickedBtn = filterBtn[0];
 
 for (let i = 0; i < filterBtn.length; i++) {

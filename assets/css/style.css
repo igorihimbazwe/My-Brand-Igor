@@ -101,7 +101,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: green;
+  background-color: rgb(165, 139, 68);
   margin-top: 20px;
   border-radius: 30px;
   height: 30px;
@@ -1126,7 +1126,15 @@ summary {
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
-
+.blog-content ion-icon {
+  color: var(--orange-yellow-crayola); /* Change to your desired color */
+  font-size: 24px; /* Adjust the size as needed */
+  margin-left: 5px; /* Adjust the margin as needed */
+  margin-right: 15px;
+}
+.actions {
+  display: flex;
+}
 /*-----------------------------------*\
   #CONTACT
 \*-----------------------------------*/

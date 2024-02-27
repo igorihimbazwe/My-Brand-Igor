@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Form</title>
+    <style>
+      .error-message {
+        color: red;
+        display: none; /* Initially hide error messages */
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="visme_d"
+      data-title="Untitled Project"
+      data-url="pvmw34rg-untitled-project?fullPage=true"
+      data-domain="forms"
+      data-full-page="true"
+      data-min-height="100vh"
+      data-form-id="26155"
+    ></div>
+    <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+    <section class="account-form">
+      <form action="#" class="form" data-form>
+        <div class="input-wrapper">
+          <div>
+            <h1>Sign up</h1>
+            <input
+              type="text"
+              name="fullname"
+              id="fname"
+              placeholder="First Name"
+            /><br />
+            <span class="error-message" id="fname-error"
+              >First name is required.</span
+            ><br />
+            <input
+              type="text"
+              name="fullname"
+              id="lname"
+              placeholder="Last Name"
+            /><br />
+            <span class="error-message" id="lname-error"
+              >Last name is required.</span
+            ><br />
+            <input
+              type="email"
+              name="email"
+              id="mail"
+              placeholder="Enter your Email"
+            /><br />
+            <span class="error-message" id="mail-error"
+              >Invalid email address.</span
+            ><br />
+            <input
+              type="password"
+              name="password"
+              id="pass1"
+              placeholder="Choose password of your Choice"
+            /><br />
+            <span class="error-message" id="pass1-error"
+              >Password must be at least 6 characters long.</span
+            ><br />
+            <input
+              type="password"
+              id="pass2"
+              class="form-input"
+              placeholder="Confirm Password"
+            /><br />
+            <span class="error-message" id="pass2-error"
+              >Passwords do not match.</span
+            ><br />
+            <button id="form-btn" type="submit">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <script>
+      function validateAndDisplayErrors() {
+        var fname = document.getElementById("fname").value.trim();
+        var lname = document.getElementById("lname").value.trim();
+        var email = document.getElementById("mail").value.trim();
+        var pass1 = document.getElementById("pass1").value;
+        var pass2 = document.getElementById("pass2").value;
+
+        // Validate First Name
+        var fnameError = document.getElementById("fname-error");
+        if (!fname) {
+          fnameError.style.display = "block";
+        } else {
+          fnameError.style.display = "none";
+        }
+
+        // Validate Last Name
+        var lnameError = document.getElementById("lname-error");
+        if (!lname) {
+          lnameError.style.display = "block";
+        } else {
+          lnameError.style.display = "none";
+        }
+
+        // Validate Email
+        var emailError = document.getElementById("mail-error");
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          emailError.style.display = "block";
+        } else {
+          emailError.style.display = "none";
+        }
+
+        // Check Password Requirements
+        var pass1Error = document.getElementById("pass1-error");
+        if (pass1.length < 6) {
+          pass1Error.style.display = "block";
+        } else {
+          pass1Error.style.display = "none";
+        }
+
+        // Verify Passwords Match
+        var pass2Error = document.getElementById("pass2-error");
+        if (pass1 !== pass2) {
+          pass2Error.style.display = "block";
+        } else {
+          pass2Error.style.display = "none";
+        }
+      }
+
+      // Trigger validation function on input event for each input field
+      document
+        .getElementById("fname")
+        .addEventListener("input", validateAndDisplayErrors);
+      document
+        .getElementById("lname")
+        .addEventListener("input", validateAndDisplayErrors);
+      document
+        .getElementById("mail")
+        .addEventListener("input", validateAndDisplayErrors);
+      document
+        .getElementById("pass1")
+        .addEventListener("input", validateAndDisplayErrors);
+      document
+        .getElementById("pass2")
+        .addEventListener("input", validateAndDisplayErrors);
+    </script>
+  </body>
+</html>

@@ -63,7 +63,7 @@
               <div class="contact-info">
                 <p class="contact-title">Email</p>
 
-                <a href="mailto:iigore2061@gmail.com" class="contact-link"
+                <a href="mailto:iigore2061@gmail.com" target="_blank" class="contact-link"
                   >iigore2061@gmail.com</a
                 >
               </div>
@@ -924,6 +924,7 @@
                     <h3 class="h3 blog-item-title">
                       Design conferences in 2023
                     </h3>
+                    
                     <details>
                       <summary>Read more...</summary>
                       <p class="blog-text">
@@ -973,6 +974,12 @@
                         numquam voluptatum? Vitae, necessitatibus excepturi!
                       </p>
                     </details>
+                    <div class="actions">
+                    <button> <ion-icon name="heart-outline"></ion-icon>20k</button>
+                    <button id="comment"><ion-icon name="chatbubble-outline"></ion-icon>30k</button>
+                    <button><ion-icon name="share-social-outline"></ion-icon>&nbsp;2k</button>
+                   
+                  </div>
                   </div>
                 </a>
               </li>
@@ -1049,6 +1056,11 @@
                         numquam voluptatum? Vitae, necessitatibus excepturi!
                       </p>
                     </details>
+                    <div class="actions">
+                      <button> <ion-icon name="heart-outline"></ion-icon>2.3k</button>
+                      <button><ion-icon name="chatbubble-outline"></ion-icon>100</button>
+                      <button><ion-icon name="share-social-outline"></ion-icon>34</button>
+                    </div>
                   </div>
                 </a>
               </li>
@@ -1123,6 +1135,11 @@
                         numquam voluptatum? Vitae, necessitatibus excepturi!
                       </p>
                     </details>
+                    <div class="actions">
+                      <button> <ion-icon name="heart-outline"></ion-icon>1.8k</button>
+                      <button><ion-icon name="chatbubble-outline"></ion-icon>120</button>
+                      <button><ion-icon name="share-social-outline"></ion-icon>3</button>
+                    </div>
                   </div>
                 </a>
               </li>
@@ -1199,6 +1216,11 @@
                         numquam voluptatum? Vitae, necessitatibus excepturi!
                       </p>
                     </details>
+                    <div class="actions">
+                      <button> <ion-icon name="heart-outline"></ion-icon>900</button>
+                      <button><ion-icon name="chatbubble-outline"></ion-icon>10</button>
+                      <button><ion-icon name="share-social-outline"></ion-icon>1</button>
+                    </div>
                   </div>
                 </a>
               </li>
@@ -1275,6 +1297,11 @@
                         numquam voluptatum? Vitae, necessitatibus excepturi!
                       </p>
                     </details>
+                    <div class="actions">
+                      <button> <ion-icon name="heart-outline"></ion-icon>1.05k</button>
+                      <button><ion-icon name="chatbubble-outline"></ion-icon>200</button>
+                      <button><ion-icon name="share-social-outline"></ion-icon>40</button>
+                    </div>
                   </div>
                 </a>
               </li>
@@ -1349,10 +1376,26 @@
                         numquam voluptatum? Vitae, necessitatibus excepturi!
                       </p>
                     </details>
+                    <div class="actions">
+                      <button> <ion-icon name="heart-outline"></ion-icon>123</button>
+                      <button id="comment"><ion-icon name="chatbubble-outline"></ion-icon>34</button>
+                      <button><ion-icon name="share-social-outline"></ion-icon>32</button>
+                    </div>
+                    <dialog id="comment-dialog">
+                      <form id="comment-form">
+                        <label>comment</label>
+                        <textarea  id="comments" cols="30" rows="10"></textarea>
+                        <button type="submit" id="submit-btn">Comment</button>
+                        <button type="reset" id="cancel-btn">cancel</button>
+                        
+                      </form>
+                    </dialog>
                   </div>
+                  
                 </a>
               </li>
             </ul>
+            
           </section>
         </article>
 
@@ -1381,13 +1424,14 @@
     
               </figure>
             </section>
-            <form action="#" class="form" data-form>
+            <form id="contacts-form" action="#" class="form">
               <div class="input-wrapper">
                 <input
                   type="text"
                   name="fullname"
                   class="form-input"
                   placeholder="Full name"
+                  id="full-name"
                   required
                   data-form-input
                 />
@@ -1396,6 +1440,7 @@
                   type="email"
                   name="email"
                   class="form-input"
+                  id="email-input"
                   placeholder="Email address"
                   required
                   data-form-input
@@ -1405,12 +1450,13 @@
               <textarea
                 name="message"
                 class="form-input"
+                id="message-input"
                 placeholder="Your Message"
                 required
                 data-form-input
               ></textarea>
 
-              <button class="form-btn" type="submit" disabled data-form-btn>
+              <button class="form-btn" type="submit" id="contact-btn">
                 <ion-icon name="paper-plane"></ion-icon>
                 <span>Send Message</span>
               </button>
@@ -1500,6 +1546,41 @@
     - custom js link
   -->
     <script src="./assets/js/script.js"></script>
+   <!-- contacts-form.js -->
+   <script>
+    const taskForm = document.getElementById("contacts-form");
+
+    taskForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+        // Retrieve existing tasks array from localStorage or create an empty array
+        const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+        // Create a new task object
+        const taskObj = {
+            title: document.getElementById("full-name").value,
+            mail: document.getElementById("email-input").value,
+            description: document.getElementById("message-input").value,
+        };
+
+        // Add the new task object to the tasks array
+        tasks.push(taskObj);
+        
+
+        // Save the updated tasks array back to localStorage
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        document.getElementById("full-name").value = "";
+        document.getElementById("email-input").value = "";
+        document.getElementById("message-input").value = "";
+        alert("Sent Successfully");
+
+        // Redirect or do other actions as needed
+        window.location.href = "#";
+    });
+</script>
+
+
+  
 
     <!--
     - ionicon link

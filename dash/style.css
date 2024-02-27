@@ -64,12 +64,17 @@ section.active {
     opacity: 1;
   }
 }
+h1 {
+  font-size: 50px;
+}
 /*dashboard*/
 
 .dashboard-content {
   background-color: #d9d9d9;
   width: 100%;
   padding: 2rem 2rem;
+  overflow: hidden;
+  overflow: scroll;
 }
 
 .top-notification {
@@ -77,12 +82,20 @@ section.active {
   justify-content: space-around;
 }
 .top-notification div {
-  border-radius: 5px;
+  border-radius: 30px;
   background-color: #c9c4c4;
-  height: 80px;
-  width: 100px;
+  width: 120px;
+  height: 100px;
   text-align: center;
   font-weight: bold;
+  padding: 40px;
+  padding-bottom: 50px;
+  padding-top: 10px;
+  font-size: 20px;
+}
+.top-notification ion-icon {
+  height: 50px;
+  width: 50px;
 }
 .center {
   display: flex;
@@ -135,6 +148,8 @@ section.active {
 .message-content {
   background-color: #d9d9d9;
   width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 main {
   margin-left: 40px;
@@ -143,11 +158,45 @@ main {
   display: flex;
   margin-left: 30px;
 }
+.person button {
+  border: none;
+
+  background-color: transparent;
+}
+.person ion-icon {
+  border: none;
+  color: black;
+  background-color: transparent;
+}
+.person ion-icon:hover {
+  border: none;
+  color: aqua;
+  background-color: transparent;
+  cursor: pointer;
+}
+.person details > summary {
+  list-style-type: none;
+}
+.person details {
+  margin-top: 18px;
+  max-width: 800px;
+  overflow: hidden;
+}
+.person .title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 180px;
+}
+.person div {
+  display: flex;
+  flex-direction: row;
+  margin-left: 70px;
+}
 .messages {
   background-color: #ada4a4;
   border-radius: 32px;
   padding: 30px;
-  margin-right: 40px;
+  margin-right: 400px;
 }
 .messages h3 {
   margin-left: 35px;
@@ -160,10 +209,146 @@ main {
 .messages p b {
   font-weight: bold;
 }
-.person a {
-  text-decoration: none;
-  color: black;
+
+/* BLOGS */
+.blog-content {
+  background-color: #d9d9d9;
+  width: 100%;
+  padding: 2rem 2rem;
+  overflow-y: scroll;
+}
+
+.large-btn {
+  width: 7em;
+  padding: 20px;
+  font-size: 20px;
+  margin-left: 60rem;
+  background-color: #312a2a;
+  color: #e47373;
+  border: none;
+  border-radius: 30px;
+}
+.task {
+  background-color: #ada4a4;
+  width: 300px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+
+  font-size: 10px;
+}
+#tasks-container {
+  margin-left: 100px;
+  display: grid;
+  grid-template-columns: 500px 10px;
+  gap: 5px;
+}
+
+.task img {
+  position: relative;
+  width: 36vh;
+  border-radius: 20px;
+
+  height: 200px;
+}
+.task button {
+  border: none;
+  padding: 7px;
+  margin: 5px;
+  background-color: #7a836b;
   font-weight: bold;
   font-size: 20px;
-  padding: 30px;
+  border-radius: 20px;
+}
+.task button:hover {
+  border: none;
+  padding: 3px;
+  margin: 5px;
+  background-color: #7a836b;
+  font-weight: bold;
+  font-size: 20px;
+  color: hotpink;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.task summary {
+  color: blue;
+}
+.task summary:hover {
+  color: rgb(84, 84, 112);
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+.task-form {
+  padding: 15px;
+  margin-bottom: 50px;
+  width: fit-content;
+  background-color: gray;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 30%;
+}
+.task-form label {
+  font-size: 20px;
+  font-weight: bold;
+}
+#image-preview {
+  width: 80px;
+  height: 100px;
+}
+.task-form-header button {
+  border: none;
+  padding: 3px;
+  margin: 5px;
+  background-color: transparent;
+  display: flex;
+  margin-left: 400px;
+  font-size: 20px;
+  width: 40px;
+}
+
+.task-form-header button:hover {
+  border: none;
+  padding-bottom: 50px;
+  background-color: black;
+  display: flex;
+  margin-left: 400px;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.task-form-footer button {
+  width: 7em;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #312a2a;
+  color: #e47373;
+  border: none;
+  border-radius: 30px;
+}
+.task-form-body {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 30px;
+}
+.task-form-body input,
+textarea {
+  width: 400px;
+  background-color: #ada4a4;
+  border: none;
+  border-radius: 30px;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.hidden {
+  display: none;
 }

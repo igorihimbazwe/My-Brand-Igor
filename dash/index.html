@@ -11,6 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    
+    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/material.css">
+<script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js"></script>
+
   
 </head>
 <body>
@@ -57,42 +61,30 @@
             <div class="top">
               <div class="top-notification">
                 <div>
+                  <ion-icon name="document-outline"></ion-icon>
                   <p>20+ <br>
                   Blog</p>
                 </div>
                 <div>
+                  <ion-icon name="people-circle-outline"></ion-icon>
                   <p>20+ <br>
                   Users</p>
                 </div>
                 <div>
+                  <ion-icon name="chatbubbles-outline"></ion-icon>
                   <p>20+
                   Messages</p>
                 </div>
               </div>
             </div>
             <div class="center">
-              <div class="center-left">
+              <div class="center-left" id="center-left">
+                
       
               </div>
-              <div class="center-right">
+              <div class="center-right" id="center-right">
                 <h3>NEW Messages</h3>
-                <div class="message">
-                  <div class="sender-message">
-                    <ion-icon name="person"></ion-icon>
-                    <p><b>Eric Shema</b><br>
-                    Lorem ipsum dolor sit amet consectetur...........</p>
-                  </div>
-                  <div class="sender-message">
-                    <ion-icon name="person"></ion-icon>
-                    <p><b>Eric Shema</b><br>
-                    Lorem ipsum dolor sit amet consectetur...........</p>
-                  </div>
-                  <div class="sender-message">
-                    <ion-icon name="person"></ion-icon>
-                    <p><b>Eric Shema</b><br>
-                    Lorem ipsum dolor sit amet consectetur...........</p>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </section>
@@ -104,52 +96,100 @@
             </div>
             <main>
               <h1>MESSAGES</h1>
-              <div class="messages">
-                <h3>Messages</h3>
-                <div class="person">
-                    <ion-icon name="person"></ion-icon>
-                    <p><b>Eric SHEMA</b><br>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, </p>
-                    <a href="#">Open</a>
-                    <a href="#">Reply</a>
-                    <a href="#">Delete</a>
-                </div>
-                <div class="person">
-                    <ion-icon name="person"></ion-icon>
-                    <p><b>Eric SHEMA</b><br>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, </p>
-                    <a href="#">Open</a>
-                    <a href="#">Reply</a>
-                    <a href="#">Delete</a>
-                </div>
-                <div class="person">
-                    <ion-icon name="person"></ion-icon>
-                    <p><b>Eric SHEMA</b><br>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, </p>
-                    <a href="#">Open</a>
-                    <a href="#">Reply</a>
-                    <a href="#">Delete</a>
-                </div>
-                <div class="person">
-                    <ion-icon name="person"></ion-icon>
-                    <p><b>Eric SHEMA</b><br>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, </p>
-                    <a href="#">Open</a>
-                    <a href="#">Reply</a>
-                    <a href="#">Delete</a>
-                </div>
-                <div class="person">
-                    <ion-icon name="person"></ion-icon>
-                    <p><b>Eric SHEMA</b><br>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, </p>
-                    <a href="#">Open</a>
-                    <a href="#">Reply</a>
-                    <a href="#">Delete</a>
-                </div>
-
-
+              <div class="messages" id="messages-container">
+                <h3>MESSAGES</h3>
+                
               </div>
             </section>
+            <!-- #BLOG PART -->
+            <section class="blog-content" data-page="blogs">
+              <div class="headd">
+                <span>Igor IHIMBAZWE &nbsp;</span>  <ion-icon name="person"></ion-icon>
+              </div>
+              <main>
+      <div class="todo-app">
+        <form class="task-form hidden" id="task-form">
+          <div class="task-form-header">
+            <button
+              id="close-task-form-btn"
+              class="close-task-form-btn"
+              type="button"
+              aria-label="close"
+            >
+              <svg
+                class="close-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 48 48"
+                width="48px"
+                height="48px"
+              >
+                <path
+                  fill="#F44336"
+                  d="M21.5 4.5H26.501V43.5H21.5z"
+                  transform="rotate(45.001 24 24)"
+                />
+                <path
+                  fill="#F44336"
+                  d="M21.5 4.5H26.5V43.501H21.5z"
+                  transform="rotate(135.008 24 24)"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="task-form-body">
+            <label class="task-form-label" for="image-input">Image</label>
+            <input
+              required
+              type="file"
+              class="form-control"
+              id="image-input"
+              accept="image/*"
+              onchange="previewImage(event)"
+            />
+            <img id="image-preview" src="" alt="Image Preview" />
+
+            <label class="task-form-label" for="title-input">Title</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              id="title-input"
+              value=""
+            />
+            <label class="task-form-label" for="date-input">Author</label>
+            <input type="Text" class="form-control" id="date-input" value="" />
+            <label class="task-form-label" for="description-input"
+              >Description</label
+            >
+            <textarea
+              class="form-control"
+              id="description-input"
+              cols="30"
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="task-form-footer">
+            <button id="add-or-update-task-btn" class="btn" type="submit">
+              Add Blog
+            </button>
+          </div>
+        </form>
+        <button id="open-task-form-btn" class="btn large-btn">+New Blog</button>
+        <dialog id="confirm-close-dialog">
+          <form method="dialog">
+            <p class="discard-message-text">Discard unsaved changes?</p>
+            <div class="confirm-close-dialog-btn-container">
+              <button id="cancel-btn" class="btn">Cancel</button>
+              <button id="discard-btn" class="btn">Discard</button>
+            </div>
+          </form>
+        </dialog>
+        <div id="tasks-container">
+        </div>
+      </div>
+    </main>
+  </section>
+              
     </div>
     <script
     type="module"
@@ -160,6 +200,84 @@
     src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
   ></script>
   <script src="script.js"></script>
+  <script src="script2.js"></script>
+  <!-- display-messages.js -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Retrieve tasks array from localStorage
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+        // Get the container where tasks will be displayed
+        const tasksContainer = document.getElementById("messages-container");
+        const messagesContainer=document.getElementById("center-right");
+
+        // Function to delete a task
+        function deleteTask(index) {
+            // Remove the task from the tasks array
+            tasks.splice(index, 1);
+            // Update localStorage with the modified tasks array
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            // Re-render the tasks on the page
+            displayTasks();
+        }
+
+        // Function to display all tasks
+        function displayTasks() {
+            // Clear previous content
+            tasksContainer.innerHTML = "";
+
+            // Check if there are any tasks stored
+            if (tasks.length > 0) {
+                // Loop through each task and display it
+                tasks.forEach((taskObj, index) => {
+                    const taskDiv = document.createElement('div');
+                    taskDiv.classList.add('person');
+                    taskDiv.innerHTML = `
+                        <ion-icon name="person"></ion-icon>
+                        <p class="title"><b>${taskObj.title}</b></p> <br> 
+                        <div>
+                        <details>
+                          
+                          <summary><ion-icon name="eye"></ion-icon></summary>
+                              <pre>${taskObj.description}</pre> 
+                             </details>
+                        <p><a href="mailto:${taskObj.mail}" target="_blank"><ion-icon name="arrow-undo"></ion-icon></a></p></div>
+                    `;
+                    const deleteButton = document.createElement('button');
+                    deleteButton.innerHTML = '<ion-icon name="trash"></ion-icon>';
+                    deleteButton.classList.add('btn');
+                    deleteButton.addEventListener('click', () => deleteTask(index));
+                    taskDiv.appendChild(deleteButton);
+                    tasksContainer.appendChild(taskDiv);
+                    messagesContainer.innerHTML+=`
+                              
+                <div class="message">
+                  <div class="sender-message">
+                    <ion-icon name="person"></ion-icon>
+                    <p><b>${taskObj.title}</b><br>
+                      ${taskObj.description}</p>
+                  </div>
+                </div> 
+                             
+                    
+                    `
+                });
+            } else {
+                // Display a message if no tasks are found
+                tasksContainer.innerHTML = "<p>No messages found</p>";
+            }
+        }
+
+        // Display tasks when the page loads
+        displayTasks();
+    });
+</script>
+
+
+
+
+
+
     
 </body>
 </html>

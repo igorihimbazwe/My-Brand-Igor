@@ -74,7 +74,7 @@ h1 {
   width: 100%;
   padding: 2rem 2rem;
   overflow: hidden;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .top-notification {
@@ -170,7 +170,7 @@ main {
 }
 .person ion-icon:hover {
   border: none;
-  color: aqua;
+  color: #706e64;
   background-color: transparent;
   cursor: pointer;
 }
@@ -257,17 +257,13 @@ main {
   margin: 5px;
   background-color: #7a836b;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
   border-radius: 20px;
 }
 .task button:hover {
   border: none;
-  padding: 3px;
-  margin: 5px;
   background-color: #7a836b;
   font-weight: bold;
-  font-size: 20px;
-  color: hotpink;
   cursor: pointer;
   border-radius: 20px;
 }

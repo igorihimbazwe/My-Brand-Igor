@@ -1135,6 +1135,12 @@ summary {
 .actions {
   display: flex;
 }
+.blog-content button {
+  color: var(--orange-yellow-crayola); /* Change to your desired color */
+  font-size: 15px; /* Adjust the size as needed */
+  margin-left: 5px; /* Adjust the margin as needed */
+  margin-right: 15px;
+}
 /*-----------------------------------*\
   #CONTACT
 \*-----------------------------------*/

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- LOGIN FORM -->
+    <article class="account" data-page="account">
+      <header>
+        <h2 class="h2 article-title">Account</h2>
+      </header>
+
+      <section class="account-form">
+        <form id="loginForm" class="form" data-form>
+          <div class="input-wrapper">
+            <div>
+              <h1>Log In</h1>
+              <input
+                type="email"
+                name="email"
+                id="loginEmail"
+                class="form-input"
+                placeholder="Enter your email"
+                data-form-input
+              />
+              <br />
+              <br />
+              <input
+                type="password"
+                name="password"
+                id="loginPassword"
+                class="form-input"
+                placeholder="Enter your password"
+                data-form-input
+              />
+              <br />
+              <br />
+              <button class="form-btn" type="submit" data-form-btn>
+                Login
+              </button>
+              <p>
+                <strong
+                  >Don't have an account
+                  <button id="signupLink">SIGNUP</button></strong
+                >
+              </p>
+            </div>
+          </div>
+        </form>
+      </section>
+    </article>
+
+    <!-- SIGNUP FORM -->
+    <article class="signup" data-page="signup" style="display: none">
+      <header>
+        <h2 class="h2 article-title">Account</h2>
+      </header>
+
+      <section class="account-form">
+        <form id="signupForm" class="form" data-form>
+          <div class="input-wrapper">
+            <div>
+              <h1>Sign up</h1>
+              <input
+                type="text"
+                name="firstName"
+                id="signupFirstName"
+                placeholder="First Name"
+                class="form-input"
+              />
+              <br /><br />
+              <input
+                type="text"
+                name="lastName"
+                id="signupLastName"
+                placeholder="Last Name"
+                class="form-input"
+              />
+              <br /><br />
+              <input
+                type="email"
+                name="email2"
+                id="signupEmail"
+                placeholder="Enter your Email"
+                class="form-input"
+              />
+              <br /><br />
+              <input
+                type="password"
+                name="password"
+                id="signupPassword"
+                placeholder="Choose password of your Choice"
+                class="form-input"
+              />
+              <br /><br />
+              <input
+                type="password"
+                id="signupConfirmPassword"
+                placeholder="Confirm Password"
+                class="form-input"
+              />
+              <br /><br />
+              <button class="form-btn" type="submit">Sign Up</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </article>
+    <script src="test.js"></script>
+  </body>
+</html>

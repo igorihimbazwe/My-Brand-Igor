@@ -39,7 +39,7 @@
           </figure>
 
           <div class="info-content">
-            <h1 class="name" title="Richard hanrick">Igor IHIMBAZWE</h1>
+            <h1 class="name" title="Igor IHIMBAZWE">Igor IHIMBAZWE</h1>
 
             <p class="title">Software developer</p>
           </div>
@@ -1471,83 +1471,113 @@
           <header>
             <h2 class="h2 article-title">Account</h2>
           </header>
-
+    
           <section class="account-form">
-            <form action="#" class="form" data-form>
+            <form id="loginForm" class="form" data-form>
               <div class="input-wrapper">
                 <div>
-
                   <h1>Log In</h1>
                   <input
                     type="email"
-                    name="Email"
+                    name="email"
+                    id="loginEmail"
                     class="form-input"
                     placeholder="Enter your email"
                     data-form-input
-                    required
                   />
                   <br />
                   <br />
                   <input
                     type="password"
-                    name="Password"
+                    name="password"
+                    id="loginPassword"
                     class="form-input"
                     placeholder="Enter your password"
                     data-form-input
-                    required
                   />
                   <br />
                   <br />
-                  <button class="form-btn" type="submit" data-form-btn >
-                    <a href="dash/index.html">Login</a>
+                  <button class="form-btn" type="submit" data-form-btn>
+                    Login
                   </button>
                   <p>
-                  <strong
-                    >Don't have account <button data-nav-link>SIGNUP</button></strong
-                  >
-                </p>
+                    <strong
+                      >Don't have an account
+                      <button id="signupLink" data-nav-link>SIGNUP</button></strong
+                    >
+                  </p>
                 </div>
-
-                
               </div>
             </form>
           </section>
         </article>
-        <!--SIGNUP-->
-        <article class="signup" data-page="signup">
+    
+        <!-- SIGNUP FORM -->
+        <article class="signup" data-page="signup" >
           <header>
             <h2 class="h2 article-title">Account</h2>
           </header>
-
+    
           <section class="account-form">
-            <form action="#" class="form" data-form>
+            <form id="signupForm" class="form" data-form>
               <div class="input-wrapper">
                 <div>
                   <h1>Sign up</h1>
-                  <input type="text" name="fullname" id="fname" placeholder="First Name" class="form-input"/>
+                  <input
+                    type="text"
+                    name="firstName"
+                    id="signupFirstName"
+                    placeholder="First Name"
+                    class="form-input"
+                  />
                   <br /><br />
-                  <input type="text" name="fullname" id="lname" placeholder="Last Name" class="form-input"/>
+                  <input
+                    type="text"
+                    name="lastName"
+                    id="signupLastName"
+                    placeholder="Last Name"
+                    class="form-input"
+                  />
                   <br /><br />
-                  <input type="email" name="email" id="mail" placeholder="Enter your Email" class="form-input"/>
+                  <input
+                    type="email"
+                    name="email2"
+                    id="signupEmail"
+                    placeholder="Enter your Email"
+                    class="form-input"
+                  />
                   <br /><br />
-                  <input type="password" name="password" id="pass1" placeholder="Choose password of your Choice" class="form-input"/>
+                  <input
+                    type="password"
+                    name="password"
+                    id="signupPassword"
+                    placeholder="Choose password of your Choice"
+                    class="form-input"
+                  />
                   <br /><br />
-                  <input type="password" id="pass2" class="form-input" placeholder="Confirm Password" class="form-input"/>
+                  <input
+                    type="password"
+                    id="signupConfirmPassword"
+                    placeholder="Confirm Password"
+                    class="form-input"
+                  />
                   <br /><br />
-                  <button id="form-btn" class="form-btn" type="submit">Sign Up</button>
+                  <button class="form-btn" type="submit" id="form-btn-sub">Sign Up</button>
                 </div>
               </div>
-    </form>
-  </section>
-</article>
+            </form>
+          </section>
+        </article>
     </main>
 
     <!--
     - custom js link
   -->
+  <script src="login.js"></script>
     <script src="./assets/js/script.js"></script>
    <!-- contacts-form.js -->
-   <script>
+   
+   <!-- <script>
     const taskForm = document.getElementById("contacts-form");
 
     taskForm.addEventListener("submit", (e) => {
@@ -1577,7 +1607,7 @@
         // Redirect or do other actions as needed
         window.location.href = "#";
     });
-</script>
+</script> -->
 
 
   
@@ -1593,5 +1623,9 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+
+    <!-- javasccript files  -->
+
+  
   </body>
 </html>

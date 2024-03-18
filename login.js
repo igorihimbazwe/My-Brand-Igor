@@ -31,7 +31,9 @@ async function handleLoginSubmit(event) {
     }
   } catch (error) {
     console.error("Error during login:", error);
-    alert("An unexpected error occurred. Please try again later.");
+    alert(
+      "An unexpected error occurred. Please Check your password and email or try again later."
+    );
   }
 }
 

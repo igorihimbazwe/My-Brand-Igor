@@ -5,13 +5,16 @@ async function handleLoginSubmit(event) {
   const password = document.getElementById("loginPassword").value;
 
   try {
-    const response = await fetch("http://localhost:5000/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
+    const response = await fetch(
+      "https://my-brand-api-6my7.onrender.com/api/auth/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      }
+    );
     // const data = await response.json();
 
     // Handle login response
@@ -55,13 +58,16 @@ document
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ firstName, lastName, email, password }),
-      });
+      const response = await fetch(
+        "https://my-brand-api-6my7.onrender.com/api/auth/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ firstName, lastName, email, password }),
+        }
+      );
       const data = await response.json();
 
       // Handle signup response
@@ -99,13 +105,16 @@ document
     const message = document.getElementById("message-input").value;
 
     try {
-      const response = await fetch("http://localhost:5000/api/message", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ fullName, email, message }),
-      });
+      const response = await fetch(
+        "https://my-brand-api-6my7.onrender.com/api/message",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ fullName, email, message }),
+        }
+      );
       const data = await response.json();
 
       // Handle contact form response

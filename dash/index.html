@@ -210,6 +210,7 @@
 
     // Get the container where messages will be displayed
     const messagesContainer = document.getElementById("messages-container");
+    const messagesContainer1=document.getElementById("center-right");
 
     // Function to retrieve messages from the backend
     async function getMessages() {
@@ -259,6 +260,18 @@
                     <button class="delete-btn" data-id="${message._id}"><ion-icon name="trash"></ion-icon></button>
                 `;
                 messagesContainer.appendChild(messageDiv);
+                messagesContainer1.innerHTML+=`
+                              
+                              <div class="message">
+                                <div class="sender-message">
+                                  <ion-icon name="person"></ion-icon>
+                                  <p><b>${message.fullName}</b><br>
+                                    ${message.message}</p>
+                                </div>
+                              </div> 
+                                           
+                                  
+                                  `
             });
 
             // Attach event listener to delete buttons

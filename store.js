@@ -17,7 +17,7 @@ const taskData = [];
 const getToken = () => {
   return localStorage.getItem("token");
 };
-const addTask = async () => {
+const addOrUpdateTask = async () => {
   try {
     const formData = new FormData();
     formData.append("title", titleInput.value);
@@ -25,8 +25,16 @@ const addTask = async () => {
     formData.append("description", descriptionInput.value);
     formData.append("image", imageInput.files[0]);
 
-    const response = await fetch("http://localhost:5000/api/blog", {
-      method: "POST",
+    let apiUrl = "http://localhost:5000/api/blog";
+    let method = "POST";
+
+    if (currentTask._id) {
+      apiUrl += `/${currentTask._id}`;
+      method = "PUT";
+    }
+
+    const response = await fetch(apiUrl, {
+      method,
       body: formData,
       headers: {
         Authorization: `Bearer ${getToken()}`,
@@ -38,7 +46,7 @@ const addTask = async () => {
     console.log("Response data:", responseData);
 
     if (!response.ok) {
-      throw new Error("Failed to add blog post");
+      throw new Error("Failed to add or update blog post");
     }
 
     reset();
@@ -46,56 +54,6 @@ const addTask = async () => {
   } catch (error) {
     console.error(error);
     // Handle error (e.g., show an error message to the user)
-  }
-};
-
-const updateTask = async () => {
-  try {
-    //   ("Title:", titleInput.value);
-    //   ("Date:", dateInput.value);
-    //  ("Description:", descriptionInput.value);
-
-    const updateBlog = {
-      title: titleInput.value,
-      author: dateInput.value,
-      description: descriptionInput.value,
-    };
-    console.log(updateBlog);
-
-    // const formData = new FormData();
-    // formData.append("title", titleInput.value);
-    // formData.append("author", dateInput.value);
-    // formData.append("description", descriptionInput.value);
-    // formData.append("image", imageInput.files[0]);
-
-    const response = await fetch(
-      `http://localhost:5000/api/blog/${currentTask._id}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updateBlog),
-        headers: {
-          Authorization: `Bearer ${getToken()}`,
-        },
-      }
-    );
-
-    console.log(response);
-
-    console.log("Response status:", response.status);
-    const responseData = await response.json();
-    console.log("Response data:", responseData);
-
-    if (!response.ok) {
-      throw new Error("Failed to update blog post");
-    }
-
-    reset();
-    updateTaskContainer();
-  } catch (error) {
-    console.error(error);
   }
 };
 
@@ -196,11 +154,7 @@ const reset = () => {
 window.addEventListener("DOMContentLoaded", updateTaskContainer);
 taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (currentTask._id) {
-    updateTask();
-  } else {
-    addTask();
-  }
+  addOrUpdateTask();
 });
 
 if (taskData.length) {

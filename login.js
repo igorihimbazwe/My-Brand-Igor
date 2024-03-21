@@ -1,8 +1,11 @@
 // Login Form Submission
 async function handleLoginSubmit(event) {
   event.preventDefault();
-  const email = document.getElementById("loginEmail").value;
-  const password = document.getElementById("loginPassword").value;
+  const emailInput = document.getElementById("loginEmail");
+  const passwordInput = document.getElementById("loginPassword");
+
+  const email = emailInput.value;
+  const password = passwordInput.value;
 
   try {
     const response = await fetch(
@@ -23,7 +26,10 @@ async function handleLoginSubmit(event) {
 
       // Store the token in localStorage
       localStorage.setItem("token", token);
-      window.location.href = "dash/index.html";
+      // Reset input fields after successful login
+      emailInput.value = "";
+      passwordInput.value = "";
+      window.location.href = "user.html";
     } else {
       // Handle login error
       console.error("Login failed:", data.message || "Unknown error");
@@ -137,3 +143,13 @@ document
       alert("An unexpected error occurred. Please try again later.");
     }
   });
+
+const logout = document.getElementById("logout");
+logout.addEventListener("click", () => {
+  localStorage.removeItem("token");
+  window.location.href = "index.html";
+});
+
+// if ((window.location.href = "index.html")) {
+//   localStorage.removeItem("token");
+// }

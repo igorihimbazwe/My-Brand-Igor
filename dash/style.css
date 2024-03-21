@@ -75,6 +75,7 @@ h1 {
   padding: 2rem 2rem;
   overflow: hidden;
   overflow-y: scroll;
+  /* background-image: url("giphy.gif"); */
 }
 
 .top-notification {
@@ -115,6 +116,8 @@ h1 {
 .center .center-right {
   width: 35%;
   height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 .center-right {
   padding: 2rem 1rem;
@@ -127,6 +130,7 @@ h1 {
 .center-right h3 {
   text-transform: uppercase;
 }
+
 .sender-message {
   display: flex;
   margin-left: 10px;
@@ -154,6 +158,14 @@ h1 {
 main {
   margin-left: 40px;
 }
+.sender-message1 {
+  display: flex;
+  margin-left: 10px;
+  overflow: hidden;
+
+  width: 600px;
+}
+
 .person {
   display: flex;
   margin-left: 30px;
@@ -177,23 +189,35 @@ main {
 .person details > summary {
   list-style-type: none;
 }
+.pbtn {
+  display: flex;
+  justify-content: flex-end;
+}
 .person details {
   margin-top: 18px;
   max-width: 800px;
   overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
 }
 .person .title {
   font-weight: bold;
   font-size: 20px;
-  margin-right: 180px;
+  width: 200px;
 }
 .person div {
   display: flex;
   flex-direction: row;
   margin-left: 70px;
 }
+.person {
+  /* border: solid 2px white; */
+  background-color: rgba(119, 106, 98, 0.404);
+  margin: 10px;
+  border-radius: 20px;
+}
+
 .messages {
-  background-color: #ada4a4;
   border-radius: 32px;
   padding: 30px;
   margin-right: 400px;

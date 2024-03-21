@@ -375,6 +375,23 @@ main {
   border-radius: 8px;
 }
 
+.comment button {
+  background-color: goldenrod;
+  margin-left: 20px;
+  margin: 20px;
+  padding: 5px;
+  color: white;
+}
+.comment label {
+  margin: 20px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+}
+.comment input {
+  border: 5px solid gold;
+}
+
 .info_more-btn {
   position: absolute;
   top: -15px;
@@ -1055,7 +1072,7 @@ main {
   z-index: 1;
 }
 
-.blog-post-item > a::before {
+.blog-post-item > section::a {
   content: "";
   position: absolute;
   inset: 1px;

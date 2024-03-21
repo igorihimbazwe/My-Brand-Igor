@@ -50,7 +50,7 @@
                 </li>
               </ul>
             </nav>
-            <button class="acc"> Account setup</button>
+            <button class="acc"> <a href="../user.html">MAIN</a></button>
           </div>
           <!--Dashboard-->
           <section class="dashboard-content active" data-page="dashboard">
@@ -66,17 +66,17 @@
               <div class="top-notification">
                 <div>
                   <ion-icon name="document-outline"></ion-icon>
-                  <p>20+ <br>
+                  <p>5 <br>
                   Blog</p>
                 </div>
                 <div>
                   <ion-icon name="people-circle-outline"></ion-icon>
-                  <p>20+ <br>
+                  <p>6 <br>
                   Users</p>
                 </div>
                 <div>
                   <ion-icon name="chatbubbles-outline"></ion-icon>
-                  <p>20+
+                  <p>6
                   Messages</p>
                 </div>
               </div>
@@ -144,7 +144,7 @@
           <div class="task-form-body">
             <label class="task-form-label" for="image-input">Image</label>
             <input
-              required
+              
               type="file"
               class="form-control"
               id="image-input"
@@ -249,19 +249,21 @@
                 const messageDiv = document.createElement("div");
                 messageDiv.classList.add("person");
                 messageDiv.innerHTML = `
-                    <div class="sender-message">
+                    <div class="sender-message1">
                         <ion-icon name="person"></ion-icon>
-                        <p class="title"><b>${message.fullName}</b></p> <br> 
-                        <div>
+                        <p class="title"><b>${message.fullName}</b></p> <br> <br>
+                        
                         <details>
                           
                           <summary><ion-icon name="eye"></ion-icon></summary>
                               <pre>${message.message}</pre> 
-                             </details>
+                             </details></div>
+                             <div class="pbtn">
                         <p><a href="mailto:${message.email}" target="_blank"><ion-icon name="arrow-undo"></ion-icon></a></p>
+                       <p> <button class="delete-btn" data-id="${message._id}"><ion-icon name="trash"></ion-icon></button></p></div>
 
                     </div>
-                    <button class="delete-btn" data-id="${message._id}"><ion-icon name="trash"></ion-icon></button>
+                    
                 `;
                 messagesContainer.appendChild(messageDiv);
                 messagesContainer1.innerHTML+=`

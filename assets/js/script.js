@@ -206,6 +206,7 @@ document
     } else {
       // Submit the form
       this.submit();
-      window.location.href = "dash/index.html";
+      window.location.href = "user.html";
+      alert("signed up successfuly");
     }
   });

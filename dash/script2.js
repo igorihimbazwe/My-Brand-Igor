@@ -82,8 +82,6 @@ const updateTask = async () => {
       }
     );
 
-    console.log(response);
-
     console.log("Response status:", response.status);
     const responseData = await response.json();
     console.log("Response data:", responseData);
@@ -94,6 +92,7 @@ const updateTask = async () => {
 
     reset();
     updateTaskContainer();
+    alert("Blog Udated");
   } catch (error) {
     console.error(error);
   }

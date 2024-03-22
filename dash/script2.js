@@ -100,10 +100,8 @@ const updateTask = async () => {
 
 const updateTaskContainer = async () => {
   try {
-    const response = await fetch("http://localhost:5000/api/admin/blogs", {
-      headers: {
-        Authorization: `Bearer ${getToken()}`, // Send JWT token with the request
-      },
+    const response = await fetch("http://localhost:5000/api/blog/", {
+      method: "GET",
     });
     if (!response.ok) {
       throw new Error("Failed to fetch blog posts");

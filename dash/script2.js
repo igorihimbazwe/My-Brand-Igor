@@ -25,13 +25,16 @@ const addTask = async () => {
     formData.append("description", descriptionInput.value);
     formData.append("image", imageInput.files[0]);
 
-    const response = await fetch("http://localhost:5000/api/blog", {
-      method: "POST",
-      body: formData,
-      headers: {
-        Authorization: `Bearer ${getToken()}`,
-      },
-    });
+    const response = await fetch(
+      "https://my-brand-api-6my7.onrender.com/api/blog",
+      {
+        method: "POST",
+        body: formData,
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      }
+    );
 
     console.log("Response status:", response.status);
     const responseData = await response.json();
@@ -69,7 +72,7 @@ const updateTask = async () => {
     // formData.append("image", imageInput.files[0]);
 
     const response = await fetch(
-      `http://localhost:5000/api/blog/${currentTask._id}`,
+      `https://my-brand-api-6my7.onrender.com/api/blog/${currentTask._id}`,
       {
         method: "PUT",
         headers: {
@@ -100,9 +103,12 @@ const updateTask = async () => {
 
 const updateTaskContainer = async () => {
   try {
-    const response = await fetch("http://localhost:5000/api/blog/", {
-      method: "GET",
-    });
+    const response = await fetch(
+      "https://my-brand-api-6my7.onrender.com/api/blog/",
+      {
+        method: "GET",
+      }
+    );
     if (!response.ok) {
       throw new Error("Failed to fetch blog posts");
     }
@@ -130,12 +136,15 @@ const updateTaskContainer = async () => {
 
 const deleteTask = async (taskId) => {
   try {
-    const response = await fetch(`http://localhost:5000/api/blog/${taskId}`, {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${getToken()}`, // Send JWT token with the request
-      },
-    });
+    const response = await fetch(
+      `https://my-brand-api-6my7.onrender.com/api/blog/${taskId}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${getToken()}`, // Send JWT token with the request
+        },
+      }
+    );
 
     if (!response.ok) {
       throw new Error("Failed to delete blog post");
@@ -149,11 +158,14 @@ const deleteTask = async (taskId) => {
 };
 const editTask = async (taskId) => {
   try {
-    const response = await fetch(`http://localhost:5000/api/blog/${taskId}`, {
-      headers: {
-        Authorization: `Bearer ${getToken()}`,
-      },
-    });
+    const response = await fetch(
+      `https://my-brand-api-6my7.onrender.com/api/blog/${taskId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      }
+    );
 
     if (!response.ok) {
       throw new Error("Failed to fetch blog post for editing");

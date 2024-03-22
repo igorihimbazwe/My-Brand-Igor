@@ -1099,7 +1099,7 @@
     
       const updateTaskContainer = async () => {
         try {
-          const response = await fetch("http://localhost:5000/api/blog/", {
+          const response = await fetch("https://my-brand-api-6my7.onrender.com/api/blog/", {
             method: "GET",
           });
     
@@ -1121,7 +1121,7 @@
     
                     <div class="blog-content">
                       <div class="blog-meta">
-                        <p class="blog-category"><strong>By:<strong>${author}</p>
+                        <p class="blog-category">By: ${author}</p>
                         <span class="dot"></span>
                         <time datetime="2022-02-23">Feb 23, 2024</time>
                        
@@ -1145,9 +1145,9 @@
                       </details>
                       
                       <div class="actions">
-                        <button><ion-icon name="heart-outline"></ion-icon>20k</button>
-                        <button id="comment"><ion-icon name="chatbubble-outline"></ion-icon>30k</button>
-                        <button><ion-icon name="share-social-outline"></ion-icon>&nbsp;2k</button>
+                        <button><ion-icon name="heart-outline"></ion-icon>LIKE</button>
+                        <button id="comment"><ion-icon name="chatbubble-outline"></ion-icon>Comments</button>
+                        <button><ion-icon name="share-social-outline"></ion-icon>share</button>
                       </div>
                     </div>
                   </a>
@@ -1162,7 +1162,7 @@
       };
       const addComment = async (blogId, commentContent) => {
   try {
-    const response = await fetch(`http://localhost:5000/api/comment/${blogId}`, {
+    const response = await fetch(`https://my-brand-api-6my7.onrender.com/api/comment/${blogId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -1185,7 +1185,7 @@
 
 const fetchComments = async (blogId) => {
   try {
-    const response = await fetch(`http://localhost:5000/api/blog/${blogId}/comments`, {
+    const response = await fetch(`https://my-brand-api-6my7.onrender.com/api/blog/${blogId}/comments`, {
       method: "GET",
     });
 
@@ -1226,7 +1226,7 @@ document.addEventListener("submit", async (e) => {
 
   const deleteComment = async (commentId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/comments/${commentId}`, {
+      const response = await fetch(`https://my-brand-api-6my7.onrender.com/api/comments/${commentId}`, {
         method: "DELETE",
       });
 

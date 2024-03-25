@@ -150,6 +150,8 @@ logout.addEventListener("click", () => {
   window.location.href = "index.html";
 });
 
+
+
 // if ((window.location.href = "index.html")) {
 //   localStorage.removeItem("token");
 // }

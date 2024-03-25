@@ -144,11 +144,11 @@ document
     }
   });
 
-// const logout = document.getElementById("logout");
-// logout.addEventListener("click", () => {
-//   localStorage.removeItem("token");
-//   window.location.href = "index.html";
-// });
+const logout = document.getElementById("logout");
+logout.addEventListener("click", () => {
+  localStorage.removeItem("token");
+  window.location.href = "index.html";
+});
 
 // if ((window.location.href = "index.html")) {
 //   localStorage.removeItem("token");
